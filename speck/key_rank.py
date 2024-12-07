@@ -12,7 +12,7 @@ json_model = json_file.read();
 
 net7 = model_from_json(json_model);
 
-net7.load_weights('net7_small.h5');
+net7.load_weights('data/net7_small.h5');
 
 
 def key_rank_one_round(nr, net, n_blocks=1, diff=(0x0040,0x0)):

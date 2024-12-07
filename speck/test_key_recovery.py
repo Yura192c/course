@@ -21,17 +21,17 @@ json_model = json_file.read();
 net8 = model_from_json(json_model);
 net7 = model_from_json(json_model);
 net6 = model_from_json(json_model);
-net8.load_weights('net8_small.h5');
-net7.load_weights('net7_small.h5');
-net6.load_weights('net6_small.h5');
+net8.load_weights('data/net8_small.h5');
+net7.load_weights('data/net7_small.h5');
+net6.load_weights('data/net6_small.h5');
 
 
-m8 = np.load('data_wrong_key_8r_mean_1e6.npy');
-s8 = np.load('data_wrong_key_8r_std_1e6.npy'); s8 = 1.0/s8;
-m7 = np.load('data_wrong_key_mean_7r.npy');
-s7 = np.load('data_wrong_key_std_7r.npy'); s7 = 1.0/s7;
-m6 = np.load('data_wrong_key_mean_6r.npy');
-s6 = np.load('data_wrong_key_std_6r.npy'); s6 = 1.0/s6;
+m8 = np.load('data/data_wrong_key_8r_mean_1e6.npy');
+s8 = np.load('data/data_wrong_key_8r_std_1e6.npy'); s8 = 1.0/s8;
+m7 = np.load('data/data_wrong_key_mean_7r.npy');
+s7 = np.load('data/data_wrong_key_std_7r.npy'); s7 = 1.0/s7;
+m6 = np.load('data/data_wrong_key_mean_6r.npy');
+s6 = np.load('data/data_wrong_key_std_6r.npy'); s6 = 1.0/s6;
 
 #binarize a given ciphertext sample
 #ciphertext is given as a sequence of arrays
@@ -262,9 +262,9 @@ def test(n, nr=11, num_structures=100, it=500, cutoff1=10.0, cutoff2=10.0, neutr
   return(arr1, arr2, good);
 
 arr1, arr2, good = test(100);
-np.save(open('run_sols1.npy','wb'),arr1);
-np.save(open('run_sols2.npy','wb'),arr2);
-np.save(open('run_good.npy','wb'),good);
+np.save(open('data/run_sols1.npy','wb'),arr1);
+np.save(open('data/run_sols2.npy','wb'),arr2);
+np.save(open('data/run_good.npy','wb'),good);
 
 # arr1, arr2, good = test(20, nr=12, num_structures=500, it=2000, cutoff1=20.0, cutoff2=500, neutral_bits=neutral13,keyschedule='free',net=net8, net_help=net7, m_main=m8, s_main=s8, m_help=m7, s_help=s7, verify_breadth=128);
 

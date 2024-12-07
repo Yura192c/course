@@ -12,10 +12,10 @@ net6 = model_from_json(json_model);
 net7 = model_from_json(json_model);
 net8 = model_from_json(json_model);
 
-net5.load_weights('net5_small.h5');
-net6.load_weights('net6_small.h5');
-net7.load_weights('net7_small.h5');
-net8.load_weights('net8_small.h5');
+net5.load_weights('data/net5_small.h5');
+net6.load_weights('data/net6_small.h5');
+net7.load_weights('data/net7_small.h5');
+net8.load_weights('data/net8_small.h5');
 
 def evaluate(net,X,Y):
     Z = net.predict(X,batch_size=10000).flatten();
